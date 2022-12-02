@@ -1,13 +1,15 @@
 name: Run the Action on each commit
 on:
   push:
+    branches:
+      - 'main'
 jobs:
   action-pull-request:
     runs-on: ubuntu-latest
-      
     steps:
-      - name: create pR
-        run: gh pr create -B dev-elementum -H main --title 'Merge branch_to_merge into base_branch' --body 'Created by Github action'
+      - run: |
+          gh create pr -B 'dev-elementum' 
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      
 
