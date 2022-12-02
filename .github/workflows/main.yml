@@ -11,6 +11,6 @@ jobs:
         uses: devops-infra/action-pull-request@v0.5.3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          source_branch: main
-          target_branch: dev-elementum
+          source_branch: dev-elementum
+          target_branch: main
           title: Automaatic pull request
