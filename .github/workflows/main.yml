@@ -14,3 +14,4 @@ jobs:
           source_branch: dev-elementum
           target_branch: main
           title: Automaatic pull request
+          get_diff: true
