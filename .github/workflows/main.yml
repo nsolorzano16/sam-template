@@ -8,7 +8,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - run: |
-          gh create pr -B 'dev-elementum' 
+          gh pr create -B 'dev-elementum' 
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       
