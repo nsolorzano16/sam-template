@@ -1,0 +1,17 @@
+name: Run the Action on each commit
+on:
+  push:
+    branches-ignore: main
+jobs:
+  action-pull-request:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+      - name: Create pull request
+        uses: devops-infra/action-pull-request@v0.5.3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          source_branch: main
+          target_branch: dev-elementum
+          title: Automaatic pull request
