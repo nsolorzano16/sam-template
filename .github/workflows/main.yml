@@ -10,6 +10,6 @@ jobs:
       - run: |
           gh pr create -B 'dev-elementum' -t 'Updating dev-elementum' -b 'This is a automatic PR'
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN_PAT }}
+          GH_TOKEN: ${{ github.token }}
       
 
