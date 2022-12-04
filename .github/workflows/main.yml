@@ -9,7 +9,7 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - run: |
-          gh pr create -B 'dev-elementum' --fill -a 'nsolorzano16' 
+          gh pr create -B 'dev-elementum' -a 'nsolorzano16' -t 'Updating dev-elementum' -b 'This is a automatic PR '
         env:
           GH_TOKEN: ${{ github.token }}
       
