@@ -1,18 +1,16 @@
-name: Update Dev Elementum
+name: Run the Action on each commit
 on:
   push:
     branches:
-      - main
+      - 'main'
 jobs:
-  updateAuthors:
+  action-pull-request:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3        
-      - name: Create Pull Request
-        uses: peter-evans/create-pull-request@v4
-        with:
-          commit-message: update elementum
-          title: Update elementum
-          body: this is a body messahge
-          branch: main
-          base: dev-elementum
+      - uses: actions/checkout@v3
+      - run: |
+          gh pr create -B 'dev-elementum' -t 'Updating dev-elementum' -b 'This is a automatic PR'
+        env:
+          GH_TOKEN: ${{ github.token }}
+      
+
